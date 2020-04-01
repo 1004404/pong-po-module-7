@@ -8,22 +8,9 @@ function setup()  {
 
 function draw() {
   background('black');
-  if (keyIsDown(UP_ARROW)) {
-      y -= 3;
-  }
-  if (keyIsDown(DOWN_ARROW)) {
-     y += 3; 
-  }
-  if (keyIsDown(LEFT_ARROW)) {
-     x -= 2;
-  }
-  if (keyIsDown(RIGHT_ARROW)) {
-     x += 2;
-  }
-  
-  x = constrain(x, 0, 200);
-  y = constrain(y, 0, 720);
-  rect(x,y,20,80);
+
+
+ 
   tekenLijn(220,250,5,10,'red');
   tekenLijn(220,275,5,10,'red');
 }
