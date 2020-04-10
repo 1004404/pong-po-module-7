@@ -1,20 +1,22 @@
-  
+// De variabelen voor de richtingen worden hier gemaakt en krijgen standaard geen richting mee, want ze moeten nog niet bewegen
 var linkerRichting = "geen";
 var rechterRichting = "geen";
 var leftscore = 0;
 var rightscore = 0;
 
 function setup()  {
-  var myCanvas = createCanvas(800,800);
-  frameRate(50);
-  Linkerbalkje = new Balkje("links");
+  var myCanvas = createCanvas(800,800); //Maakt het canvas met een grote van 800 bij 800 pixels
+  frameRate(50); //Framerate van 50
+  Linkerbalkje = new Balkje("links"); //De class wordt aangeroepen, er wordt een linker en rechter variant van gemaakt
   Rechterbalkje = new Balkje("rechts");  
   bal = new Bal();
 }
 
 function draw() {
-     // backgroundGetal = (Math.ceil(Math.random() * 10));
-    backgroundGetal = score;
+    //Er is ook nog een deluxe versie gemaakt van het kleuren systeem, haal bij regel 17 de // weg en bij regel 18 moet je ze erbij zetten, kijk uit het kan mogelijk epilepsie aanvallen veroorzaken.
+     // backgroundGetal = (Math.ceil(Math.random() * 10)); 
+    backgroundGetal = score; //In Bal.js wordt er bij elke reset loop er 1 bij score opgeteld. 
+    //afhangend van welk backgroundGetal wordt de backgroundcolor veranderd voor scores tot en met 30.
     if (backgroundGetal == 1 || backgroundGetal == 11 || backgroundGetal == 21){
         backgroundColor = 'pink';
     }
@@ -47,11 +49,11 @@ function draw() {
     }
 
     background(backgroundColor);
-    krijgRichting();
+    krijgRichting();//Krijgrichting wordt hier aangesproken
     textSize(20);
-    Linkerbalkje.bewegen(linkerRichting);
+    Linkerbalkje.bewegen(linkerRichting);//Hier wordt het bewegen script aangeroepen voor linker en rechter balkje.
     Rechterbalkje.bewegen(rechterRichting);
-    Linkerbalkje.teken();
+    Linkerbalkje.teken();//Linker en rechter blakje worden getekend
     Rechterbalkje.teken();
     
     bal.kaatsLinkerbalkje(Linkerbalkje);
@@ -66,7 +68,8 @@ function draw() {
     text(leftscore, 40, 40);
     text(rightscore, width - 80, 40);
 
-
+    //Hier worden de lijnen getekend. Dit is een snelle en compacte manier ervan. Elke keer als de loop herahald wordt wordt er weer een nieuw lijnstukje getekend
+    //met de eigenschappen van tekenLijn(). Dit wordt gedaan tot 35. Na elke loop wordt de Y coord. verhoogd met 25 zodat er een mooie stippellijn ontstaat.
     var lijnYLinks = 0;
     for(var lijnNumberLinks = 1; lijnNumberLinks < 35; lijnNumberLinks++){
         tekenLijn(220,lijnYLinks,6,10,'red');
@@ -88,14 +91,14 @@ function draw() {
 
 
 }
-
+//Tekenlijn function met x,y,w,h en kleur. Dit zodat het er compacter uitziet in de draw.
 function tekenLijn(x,y,w,h,kleur) {
     push();
     fill(kleur);
     rect(x,y,w,h);
     pop();
 }
-
+//Afhankelijk van welk knopje wordt ingedrukt wordt de richting veranderd. Als er geen knopje wordt ingedrukt dan heeft hij geen richting.
 function krijgRichting() {
 if (keyIsDown(UP_ARROW)) {
      rechterRichting = "omhoog";
@@ -113,7 +116,7 @@ else {
     rechterRichting = "geen";
 }
 
-
+//De getallen staan voor W,S,A,D. 
 if (keyIsDown(87)) {
      linkerRichting = "omhoog";
 }
