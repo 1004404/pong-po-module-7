@@ -64,12 +64,12 @@ class Bal {
     }
 
     if (this.x - this.r > width) {
-      linksscore++;
+      leftscore++;
       this.reset();
     }
 
     if (this.x + this.r < 0) {
-      rechtsscore++;
+      rigthscore++;
       this.reset();
     }
   }
