@@ -21,9 +21,9 @@ function draw() {
     bal.edges();
 
     fill('white');
-    textSize(50);
-    text(leftscore, 50, 40);
-    text(rightscore, width - 100, 40)
+    textSize(40);
+    text(leftscore, 40, 40);
+    text(rightscore, width - 80, 40)
 
     var lijnYLinks = 0;
     for(var lijnNumberLinks = 1; lijnNumberLinks < 35; lijnNumberLinks++){
