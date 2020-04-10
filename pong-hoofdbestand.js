@@ -1,3 +1,4 @@
+  
 var linkerRichting = "geen";
 var rechterRichting = "geen";
 var leftscore = 0;
@@ -19,6 +20,8 @@ function draw() {
     Linkerbalkje.teken();
     Rechterbalkje.teken();
     bal.edges();
+    bal.show();
+    bal.update();
 
     fill('white');
     textSize(40);

@@ -9,7 +9,7 @@ class Bal {
     this.reset();
   }
 
-  checkBalkjeLinks(p) {
+  checkRechterBalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -25,7 +25,7 @@ class Bal {
       }
     }
   }
-  checkBalkjeRechts(p) {
+  checkLinkerBalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
