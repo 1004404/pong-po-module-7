@@ -18,7 +18,7 @@ function draw() {
     backgroundGetal = score; //In Bal.js wordt er bij elke reset loop er 1 bij score opgeteld. 
     //afhangend van welk backgroundGetal wordt de backgroundcolor veranderd voor scores tot en met 30.
     if (backgroundGetal == 1 || backgroundGetal == 11 || backgroundGetal == 21){
-        backgroundColor = 'pink';
+        backgroundColor = 'salmon';
     }
     else if (backgroundGetal == 2 || backgroundGetal == 12 || backgroundGetal == 22){
         backgroundColor = 'black';
@@ -56,17 +56,17 @@ function draw() {
     Linkerbalkje.teken();//Linker en rechter blakje worden getekend
     Rechterbalkje.teken();
     
-    bal.kaatsLinkerbalkje(Linkerbalkje);
+    bal.kaatsLinkerbalkje(Linkerbalkje);//hier wordt de weerkaatsing van de bal op beide balkjes aangeroepen
     bal.kaatsRechterbalkje(Rechterbalkje);
 
-    bal.edges();
-    bal.show();
-    bal.update();
+    bal.edges();//hier worden de randen en scores aangeroepen
+    bal.show();//hier wordt de bal aangeroepen
+    bal.update();//hier wordt de weergave van de verplaatsing van de bal aangeroepen
     
-    fill('white');
-    textSize(40);
-    text(leftscore, 40, 40);
-    text(rightscore, width - 80, 40);
+    fill('white');//hier wordt de kleur van alle karakters in de canvas vastgesteld
+    textSize(40);//hier wordt de lettertype vastgesteld
+    text(leftscore, 40, 40);//hier wordt de positite van de score voor het balkje aan de linkerzijde bepaald
+    text(rightscore, width - 80, 40);//hier wordt de positite van de score voor het balkje aan de linkerzijde bepaald
 
     //Hier worden de lijnen getekend. Dit is een snelle en compacte manier ervan. Elke keer als de loop herahald wordt wordt er weer een nieuw lijnstukje getekend
     //met de eigenschappen van tekenLijn(). Dit wordt gedaan tot 35. Na elke loop wordt de Y coord. verhoogd met 25 zodat er een mooie stippellijn ontstaat.

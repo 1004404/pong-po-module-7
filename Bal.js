@@ -1,3 +1,4 @@
+  //hier worden de specificaties van de bal gegeven en de plek vanuit waar hij gereset wordt.
 var score = 0;
 class Bal {
   constructor() {
@@ -10,13 +11,15 @@ class Bal {
     this.reset();
   }
 
+  //hier worden door middel van formules bepaald wanneer de bal een balkje raakt.
   kaatsLinkerbalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
       this.x - this.r < p.x + p.w / 2
     ) {
-      if (this.x > p.x) {
+        //als dus de bal een balkje raakt wordt hier dus bepaald wat er met de richting en de snelheden van de bal gebeurt.
+        if (this.x > p.x) {
         let diff = this.y - (p.y - p.h / 2);
         let rad = radians(45);
         let angle = map(diff, 0, p.h, -rad, rad);
@@ -42,12 +45,12 @@ class Bal {
     }
   }
 
-
+  //deze update functie veranderd telkens met een snelheid van 50 FPS de x en y coördinaten van de bal.
   update() {
     this.x += this.xspeed;
     this.y += this.yspeed;
   }
-
+  //in deze reset functie wordt vanuit het midden van de canvas een willekeurige hoek gekozen waarmee de bal met een snelheid van 3 of -3 zich gaat voortbewegen.
   reset() {
     this.x = width / 2;
     this.y = height / 2;
@@ -59,12 +62,12 @@ class Bal {
       this.xspeed *= -1;
     }
   }
-
+  //deze functie geeft de twee horizontale randen weer, wanneer de bal deze raakt, wordt de horizontale snelheid vermenigvuldigd met -1.
   edges() {
     if (this.y < 0 || this.y > height) {
       this.yspeed *= -1;
     }
-
+    //ook wordt hier weergegeven wanneer er "gescoord" is, dit is het geval wanneer de bal in zijn geheel over de verticale grenzen is.
     if (this.x - this.r > width) {
       leftscore++;
       this.reset();
@@ -75,10 +78,9 @@ class Bal {
       this.reset();
     }
   }
-
+  //hier wordt de witte bal weergegeven, mits hij aan wordt geroepen in het hoofdbestand.
   show() {
     fill(255);
     ellipse(this.x, this.y, this.r * 2);
-    text("x=" + round(this.x) + ", y=" + round(this.y), 300, 300);
   }
 }
