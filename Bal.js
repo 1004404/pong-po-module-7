@@ -9,7 +9,7 @@ class Bal {
     this.reset();
   }
 
-  checkRechterBalkje(p) {
+  checkLinkerbalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -18,14 +18,14 @@ class Bal {
       if (this.x > p.x) {
         let diff = this.y - (p.y - p.h / 2);
         let rad = radians(45);
-        let hoek = map(diff, 0, p.h, -rad, rad);
+        let angle = map(diff, 0, p.h, -rad, rad);
         this.xspeed = 3 * cos(angle);
         this.yspeed = 3 * sin(angle);
         this.x = p.x + p.w / 2 + this.r;
       }
     }
   }
-  checkLinkerBalkje(p) {
+  checkRechterbalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&

@@ -8,7 +8,7 @@ constructor(zijde) {
     if (this.zijde == "rechts"){
         this.x = 750;
     }
-    this.y = 50;
+    this.y = 360;
 
 }
 

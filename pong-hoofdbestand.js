@@ -22,7 +22,6 @@ function draw() {
     bal.edges();
     bal.show();
     bal.update();
-    bal.reset();
 
     fill('white');
     textSize(40);
