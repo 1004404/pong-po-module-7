@@ -9,8 +9,8 @@ function setup()  {
   frameRate(50);
   Linkerbalkje = new Balkje("links");
   Rechterbalkje = new Balkje("rechts");
-  links = new Balkje(true);
-  rechts = new Balkje(false);  
+  links = new Balkje("links");
+  rechts = new Balkje("rechts");  
   bal = new Bal();
 }
 
@@ -22,8 +22,8 @@ function draw() {
     Linkerbalkje.teken();
     Rechterbalkje.teken();
     
-    bal.checkLinkerbalkje(links);
-    bal.checkRechterbalkje(rechts);
+    bal.kaatsLinkerbalkje(links);
+    bal.kaatsRechterbalkje(rechts);
 
     bal.edges();
     bal.show();

@@ -4,12 +4,12 @@ class Bal {
     this.y = height / 2;
     this.xspeed = 0;
     this.yspeed = 0;
-    this.r = 12;
+    this.r = 15;
 
     this.reset();
   }
 
-  checkLinkerbalkje(p) {
+  kaatsLinkerbalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -25,7 +25,7 @@ class Bal {
       }
     }
   }
-  checkRechterbalkje(p) {
+  kaatsRechterbalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&

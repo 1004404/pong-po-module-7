@@ -1,5 +1,7 @@
 class Balkje {
 constructor(zijde) {
+    this.h = 80;
+    this.w = 20;
     this.zijde = zijde;
     if (this.zijde == "links") {
         this.x = 50;
