@@ -9,7 +9,7 @@ class Bal {
     this.reset();
   }
 
-  checkPaddleLeft(p) {
+  checkBalkjeLeft(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -25,7 +25,7 @@ class Bal {
       }
     }
   }
-  checkPaddleRight(p) {
+  checkBalkjeRight(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
