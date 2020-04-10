@@ -7,6 +7,7 @@ function setup()  {
   frameRate(50);
   Linkerbalkje = new Balkje("links");
   Rechterbalkje = new Balkje("rechts");
+  bal = new Bal();
 }
 
 function draw() {
@@ -16,6 +17,7 @@ function draw() {
     Rechterbalkje.bewegen(rechterRichting);
     Linkerbalkje.teken();
     Rechterbalkje.teken();
+    bal.edges();
 
     var lijnYLinks = 0;
     for(var lijnNumberLinks = 1; lijnNumberLinks < 35; lijnNumberLinks++){
