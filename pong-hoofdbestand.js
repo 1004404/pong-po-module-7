@@ -1,7 +1,7 @@
 var linkerRichting = "geen";
 var rechterRichting = "geen";
-let leftscore = 0;
-let rightscore = 0;
+var leftscore = 0;
+var rightscore = 0;
 
 function setup()  {
   var myCanvas = createCanvas(800,800);
