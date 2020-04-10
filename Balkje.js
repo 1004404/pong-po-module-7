@@ -14,16 +14,16 @@ constructor(zijde) {
 
 bewegen(richting) {
     if (richting == "omhoog") {
-        this.y -= 3;
+        this.y -= 7;
     }
     else if (richting == "omlaag") {
-        this.y += 3; 
+        this.y += 7; 
     }
     else if (richting == "links") {
-        this.x -= 2;
+        this.x -= 6;
     }
     else if (richting == "rechts") {
-        this.x += 2;
+        this.x += 6;
     }
     if (this.zijde == "links"){
         this.x = constrain(this.x, 0, 200);

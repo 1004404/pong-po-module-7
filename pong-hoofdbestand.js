@@ -22,11 +22,12 @@ function draw() {
     bal.edges();
     bal.show();
     bal.update();
+    bal.reset();
 
     fill('white');
     textSize(40);
     text(leftscore, 40, 40);
-    text(rightscore, width - 80, 40)
+    text(rightscore, width - 80, 40);
 
     var lijnYLinks = 0;
     for(var lijnNumberLinks = 1; lijnNumberLinks < 35; lijnNumberLinks++){
