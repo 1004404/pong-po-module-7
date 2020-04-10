@@ -4,12 +4,12 @@ class Bal {
     this.y = height / 2;
     this.xspeed = 0;
     this.yspeed = 0;
-    this.r = 15;
+    this.r = 12;
 
     this.reset();
   }
 
-  checkLinkerbalkje(links) {
+  checkLinkerbalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -25,7 +25,7 @@ class Bal {
       }
     }
   }
-  checkRechterbalkje(rechts) {
+  checkRechterbalkje(p) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -50,8 +50,8 @@ class Bal {
     this.x = width / 2;
     this.y = height / 2;
     let angle = random(-PI / 4, PI / 4);
-    this.xspeed = 5 * Math.cos(angle);
-    this.yspeed = 5 * Math.sin(angle);
+    this.xspeed = 3 * Math.cos(angle);
+    this.yspeed = 3 * Math.sin(angle);
 
     if (random(1) < 0.5) {
       this.xspeed *= -1;
