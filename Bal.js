@@ -4,42 +4,43 @@ class Bal {
     this.y = height / 2;
     this.xspeed = 0;
     this.yspeed = 0;
-    this.r = 15;
+    this.r = 20;
 
     this.reset();
   }
 
   kaatsLinkerbalkje(p) {
     if (
-      this.y - this.r < p.y + p.h &&
-      this.y + this.r > p.y &&
-      this.x - this.r < p.x + p.w &&
-      this.x > p.x + p.w
-    ) { text("klb", 300, 300);
+      this.y - this.r < p.y + p.h / 2 &&
+      this.y + this.r > p.y - p.h / 2 &&
+      this.x - this.r < p.x + p.w / 2
+    ) {
+      if (this.x > p.x) {
         let diff = this.y - (p.y - p.h / 2);
         let rad = radians(45);
         let angle = map(diff, 0, p.h, -rad, rad);
-        this.xspeed = 3 * cos(angle);
-        this.yspeed = 3 * sin(angle);
+        this.xspeed = 5 * cos(angle);
+        this.yspeed = 5 * sin(angle);
         this.x = p.x + p.w / 2 + this.r;
+      }
     }
   }
   kaatsRechterbalkje(p) {
     if (
-      this.y - this.r < p.y + p.h &&
-      this.y + this.r > p.y &&
-      this.x + this.r > p.x &&
-      this.x < p.x
-    ) { text("rlb", 300, 300);
-      //if (this.x < p.x) {
+      this.y - this.r < p.y + p.h / 2 &&
+      this.y + this.r > p.y - p.h / 2 &&
+      this.x + this.r > p.x - p.w / 2
+    ) {
+      if (this.x < p.x) {
         let diff = this.y - (p.y - p.h / 2);
         let angle = map(diff, 0, p.h, radians(225), radians(135));
-        this.xspeed = 3 * cos(angle);
-        this.yspeed = 3 * sin(angle);
+        this.xspeed = 5 * cos(angle);
+        this.yspeed = 5 * sin(angle);
         this.x = p.x - p.w / 2 - this.r;
-      //}
+      }
     }
   }
+
 
   update() {
     this.x += this.xspeed;
