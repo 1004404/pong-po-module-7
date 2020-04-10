@@ -42,6 +42,7 @@ bewegen(richting) {
 
 teken(){
     rect(this.x,this.y,20,80); 
+    text("x=" + this.x + ", y=" + this.y, this.x, 100);
 }
 
 }

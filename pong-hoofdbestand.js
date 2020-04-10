@@ -8,22 +8,21 @@ function setup()  {
   var myCanvas = createCanvas(800,800);
   frameRate(50);
   Linkerbalkje = new Balkje("links");
-  Rechterbalkje = new Balkje("rechts");
-  links = new Balkje("links");
-  rechts = new Balkje("rechts");  
+  Rechterbalkje = new Balkje("rechts");  
   bal = new Bal();
 }
 
 function draw() {
     background('black');
     krijgRichting();
+    textSize(20);
     Linkerbalkje.bewegen(linkerRichting);
     Rechterbalkje.bewegen(rechterRichting);
     Linkerbalkje.teken();
     Rechterbalkje.teken();
     
-    bal.kaatsLinkerbalkje(links);
-    bal.kaatsRechterbalkje(rechts);
+    bal.kaatsLinkerbalkje(Linkerbalkje);
+    bal.kaatsRechterbalkje(Rechterbalkje);
 
     bal.edges();
     bal.show();
@@ -33,6 +32,7 @@ function draw() {
     textSize(40);
     text(leftscore, 40, 40);
     text(rightscore, width - 80, 40);
+
 
     var lijnYLinks = 0;
     for(var lijnNumberLinks = 1; lijnNumberLinks < 35; lijnNumberLinks++){
