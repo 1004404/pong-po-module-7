@@ -20,6 +20,11 @@ function draw() {
     Rechterbalkje.teken();
     bal.edges();
 
+    fill('white');
+    textSize(32);
+    text(leftscore, 32, 40);
+    text(rightscore, width - 64, 40)
+
     var lijnYLinks = 0;
     for(var lijnNumberLinks = 1; lijnNumberLinks < 35; lijnNumberLinks++){
         tekenLijn(220,lijnYLinks,6,10,'red');
