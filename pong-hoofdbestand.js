@@ -1,6 +1,7 @@
 var linkerRichting = "geen";
 var rechterRichting = "geen";
 
+
 function setup()  {
   var myCanvas = createCanvas(800,800);
   frameRate(50);
@@ -15,11 +16,27 @@ function draw() {
     Rechterbalkje.bewegen(rechterRichting);
     Linkerbalkje.teken();
     Rechterbalkje.teken();
-    tekenLijn(220,250,5,10,'red');
-    tekenLijn(220,275,5,10,'red');
-    tekenLijn(220,300,5,10,'red');
-    tekenLijn(220,325,5,10,'red');
-    tekenLijn(220,350,5,10,'red');
+
+    var lijnYLinks = 0;
+    for(var lijnNumberLinks = 1; lijnNumberLinks < 35; lijnNumberLinks++){
+        tekenLijn(220,lijnYLinks,6,10,'red');
+        lijnYLinks = lijnYLinks + 25;
+    }
+
+    var lijnYRechts = 0;
+    for(var lijnNumberRechts = 1; lijnNumberRechts < 35; lijnNumberRechts++){
+        tekenLijn(594,lijnYRechts,6,10,'red');
+        lijnYRechts = lijnYRechts + 25;
+    }
+
+    var lijnYMidden = 0;
+    for(var lijnNumberMidden = 1; lijnNumberMidden < 35; lijnNumberMidden++){
+        tekenLijn(397,lijnYMidden,8,12,'blue');
+        lijnYMidden = lijnYMidden + 25;
+    }
+
+
+
 }
 
 function tekenLijn(x,y,w,h,kleur) {
