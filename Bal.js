@@ -1,3 +1,4 @@
+var score = 0;
 class Bal {
   constructor() {
     this.x = width / 2;
@@ -53,7 +54,7 @@ class Bal {
     let angle = random(-PI / 4, PI / 4);
     this.xspeed = 3 * Math.cos(angle);
     this.yspeed = 3 * Math.sin(angle);
-
+    score++;
     if (random(1) < 0.5) {
       this.xspeed *= -1;
     }

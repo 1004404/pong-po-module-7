@@ -13,7 +13,40 @@ function setup()  {
 }
 
 function draw() {
-    background('black');
+     // backgroundGetal = (Math.ceil(Math.random() * 10));
+    backgroundGetal = score;
+    if (backgroundGetal == 1 || backgroundGetal == 11 || backgroundGetal == 21){
+        backgroundColor = 'pink';
+    }
+    else if (backgroundGetal == 2 || backgroundGetal == 12 || backgroundGetal == 22){
+        backgroundColor = 'black';
+    }
+    else if (backgroundGetal == 3|| backgroundGetal == 13 || backgroundGetal == 23){
+        backgroundColor = 'blue';
+    }
+    else if (backgroundGetal == 4 || backgroundGetal == 14 || backgroundGetal == 24){
+        backgroundColor = 'red';
+    }
+    else if (backgroundGetal == 5 || backgroundGetal == 15 || backgroundGetal == 25){
+        backgroundColor = 'yellow';
+    }
+    else if (backgroundGetal == 6 || backgroundGetal == 16 || backgroundGetal == 26){
+        backgroundColor = 'orange';
+    }
+    else if (backgroundGetal == 7 || backgroundGetal == 17 || backgroundGetal == 27){
+        backgroundColor = 'green';
+    }
+    else if (backgroundGetal == 8 || backgroundGetal == 18 || backgroundGetal == 28){
+        backgroundColor = 'purple';
+    }
+    else if (backgroundGetal == 9 || backgroundGetal == 19 || backgroundGetal == 29){
+        backgroundColor = 'salmon';
+    }
+    else if (backgroundGetal == 10 || backgroundGetal == 20 || backgroundGetal == 30){
+        backgroundColor = 'brown';
+    }
+
+    background(backgroundColor);
     krijgRichting();
     textSize(20);
     Linkerbalkje.bewegen(linkerRichting);
