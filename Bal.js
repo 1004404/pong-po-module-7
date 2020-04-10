@@ -9,7 +9,7 @@ class Bal {
     this.reset();
   }
 
-  checkLinkerbalkje(p) {
+  checkLinkerbalkje(links) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -25,7 +25,7 @@ class Bal {
       }
     }
   }
-  checkRechterbalkje(p) {
+  checkRechterbalkje(rechts) {
     if (
       this.y - this.r < p.y + p.h / 2 &&
       this.y + this.r > p.y - p.h / 2 &&
@@ -69,7 +69,7 @@ class Bal {
     }
 
     if (this.x + this.r < 0) {
-      rigthscore++;
+      rightscore++;
       this.reset();
     }
   }
